@@ -18,7 +18,7 @@ MVVM test
 - rxswift 
 - rxcocoa 
 - Alamofire
-
+- .
 
 # 3. swift 파일 설명 
 - MvvmTableTestViewController는 View의 역할을 하는 파일이며, 
