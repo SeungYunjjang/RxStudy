@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1CDE1B23B0794200F60454 /* DisappearTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CDE1A23B0794200F60454 /* DisappearTestVC.swift */; };
 		CE68636323A86AA300B03311 /* AlamoFireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68636223A86AA300B03311 /* AlamoFireManager.swift */; };
 		CE68636523A86DF200B03311 /* ExRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68636423A86DF200B03311 /* ExRequest.swift */; };
 		CE68636723A86E8100B03311 /* ServerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68636623A86E8100B03311 /* ServerUtil.swift */; };
@@ -42,6 +43,7 @@
 		263F595E067A397B9D5EB8EB /* Pods-RxTableViewTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTableViewTest.debug.xcconfig"; path = "Target Support Files/Pods-RxTableViewTest/Pods-RxTableViewTest.debug.xcconfig"; sourceTree = "<group>"; };
 		344A6D36FB5F8D0A258ECD86 /* Pods-RxTableViewTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTableViewTest.release.xcconfig"; path = "Target Support Files/Pods-RxTableViewTest/Pods-RxTableViewTest.release.xcconfig"; sourceTree = "<group>"; };
 		A19ED642E3D7BCD3F00506D4 /* Pods_RxTableViewTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTableViewTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1CDE1A23B0794200F60454 /* DisappearTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisappearTestVC.swift; sourceTree = "<group>"; };
 		CE68636223A86AA300B03311 /* AlamoFireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireManager.swift; sourceTree = "<group>"; };
 		CE68636423A86DF200B03311 /* ExRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExRequest.swift; sourceTree = "<group>"; };
 		CE68636623A86E8100B03311 /* ServerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerUtil.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				CE70110E23A07DC900542D84 /* MvvmTableTestViewController.swift */,
+				CE1CDE1A23B0794200F60454 /* DisappearTestVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				CE68636723A86E8100B03311 /* ServerUtil.swift in Sources */,
 				CE68636E23A87AFD00B03311 /* EndTakeModel.swift in Sources */,
 				CE68637123A87B1F00B03311 /* EndTakeViewModel.swift in Sources */,
+				CE1CDE1B23B0794200F60454 /* DisappearTestVC.swift in Sources */,
 				CE68636323A86AA300B03311 /* AlamoFireManager.swift in Sources */,
 				CEC33355239E382600E0D4B8 /* AppDelegate.swift in Sources */,
 				CE68636523A86DF200B03311 /* ExRequest.swift in Sources */,

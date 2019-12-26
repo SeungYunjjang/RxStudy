@@ -16,6 +16,7 @@ struct APiURls {
     
     enum URLKey: String {
         case end_take = "app/take/end_take"
+        case end_take_detail = "/app/take/del_take_detail"
     }
     
     private init() {

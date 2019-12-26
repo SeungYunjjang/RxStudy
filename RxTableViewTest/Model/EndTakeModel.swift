@@ -51,4 +51,6 @@ struct EndTakeModel {
         let endTime = _endDate["time"] as? Double ?? 0.0
         endDate = formetter.string(from: Date(timeIntervalSince1970: endTime / 1000))
     }
+    
 }
+
