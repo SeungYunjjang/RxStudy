@@ -1,6 +1,0 @@
-framework module Pods_RxTableViewTest {
-  umbrella header "Pods-RxTableViewTest-umbrella.h"
-
-  export *
-  module * { export * }
-}
