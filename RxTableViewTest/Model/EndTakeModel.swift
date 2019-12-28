@@ -30,6 +30,7 @@ struct EndTakeModel {
             let image = UIImage(data: data) {
             mainImage = image
         } else {
+            "TEST"
             mainImage = #imageLiteral(resourceName: "map_pin_icon_mini")
         }
         
