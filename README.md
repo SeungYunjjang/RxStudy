@@ -35,7 +35,7 @@ BLANK
 
 [RxStudy-0002]<REFACTOR>
 
-[NO-BTS]<CHORE>versionUp 1.0.3.1
+[NO-FEAT]<CHORE> VersionUp 1.0.3.1
 ```
 
 ## Folder
