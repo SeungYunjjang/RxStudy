@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shop-->
+        <scene sceneID="jbK-ng-JK3">
+            <objects>
+                <viewController storyboardIdentifier="ShopVC" id="TRZ-Y5-Lo5" customClass="ShopViewController" customModule="RxStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QnY-9f-DVZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j7E-CG-yZy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ShopTableViewCell" rowHeight="88" id="Jb1-is-Iu3" customClass="ShopTableViewCell" customModule="RxStudy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jb1-is-Iu3" id="R3X-we-FCY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDz-tX-ULq">
+                                                    <rect key="frame" x="20" y="20" width="374" height="48"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="qDz-tX-ULq" secondAttribute="bottom" constant="20" symbolic="YES" id="5zh-Pk-8iD"/>
+                                                <constraint firstItem="qDz-tX-ULq" firstAttribute="top" secondItem="R3X-we-FCY" secondAttribute="top" constant="20" symbolic="YES" id="By1-j6-Q7g"/>
+                                                <constraint firstItem="qDz-tX-ULq" firstAttribute="leading" secondItem="R3X-we-FCY" secondAttribute="leading" constant="20" symbolic="YES" id="S5E-Va-NfZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="qDz-tX-ULq" secondAttribute="trailing" constant="20" symbolic="YES" id="rqL-CT-tNj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productImageView" destination="qDz-tX-ULq" id="ICU-sb-0lD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="j7E-CG-yZy" firstAttribute="leading" secondItem="DM5-Dx-ai0" secondAttribute="leading" id="91W-bj-7g9"/>
+                            <constraint firstItem="j7E-CG-yZy" firstAttribute="top" secondItem="DM5-Dx-ai0" secondAttribute="top" id="Srx-0v-lDP"/>
+                            <constraint firstItem="DM5-Dx-ai0" firstAttribute="trailing" secondItem="j7E-CG-yZy" secondAttribute="trailing" id="k6V-Du-Qv4"/>
+                            <constraint firstItem="DM5-Dx-ai0" firstAttribute="bottom" secondItem="j7E-CG-yZy" secondAttribute="bottom" id="mEM-QH-MX0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DM5-Dx-ai0"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Shop" image="s.circle" catalog="system" id="1K3-cA-buO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="j7E-CG-yZy" id="yMj-Pu-Qpq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccG-4r-49h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="408.69565217391306" y="-457.36607142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="s.circle" catalog="system" width="64" height="60"/>
+    </resources>
+</document>
