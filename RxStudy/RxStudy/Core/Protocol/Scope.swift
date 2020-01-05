@@ -26,7 +26,6 @@ extension HasApply {
 
 extension NSObject: HasApply, HasLet { }
 
-
 func run<R>(closure: () -> R) -> R {
     return closure()
 }

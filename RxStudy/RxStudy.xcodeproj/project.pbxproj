@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		4E8E1C17700B7DD7B4C2FEB6 /* Pods_RxStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED95B813DDC8BE3F0A58E0 /* Pods_RxStudy.framework */; };
+		E201F13723BE0E0F00965DF3 /* Parametable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E201F13623BE0E0F00965DF3 /* Parametable.swift */; };
+		E20BF46623BB95B100326878 /* Respondable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20BF46523BB95B100326878 /* Respondable.swift */; };
+		E248C3AB23BCE71300ECBB72 /* KakaoAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */; };
+		E248C3AD23BCE7B100ECBB72 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C3AC23BCE7B100ECBB72 /* Common.swift */; };
 		E2A05F2323BA285B002F6535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F2223BA285B002F6535 /* AppDelegate.swift */; };
 		E2A05F2523BA285B002F6535 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F2423BA285B002F6535 /* SceneDelegate.swift */; };
 		E2A05F2723BA285B002F6535 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F2623BA285B002F6535 /* MainViewController.swift */; };
 		E2A05F2A23BA285B002F6535 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A05F2823BA285B002F6535 /* Main.storyboard */; };
 		E2A05F2C23BA285C002F6535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A05F2B23BA285C002F6535 /* Assets.xcassets */; };
 		E2A05F2F23BA285C002F6535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A05F2D23BA285C002F6535 /* LaunchScreen.storyboard */; };
-		E2A05F3923BA2C51002F6535 /* ScopeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F3823BA2C51002F6535 /* ScopeProtocol.swift */; };
+		E2A05F3923BA2C51002F6535 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F3823BA2C51002F6535 /* Scope.swift */; };
 		E2A05F5223BA3460002F6535 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F5123BA3460002F6535 /* TopViewController.swift */; };
+		E2A05F5423BA44B7002F6535 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F5323BA44B7002F6535 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +40,10 @@
 		54C8D956EBA8EED16ADB8C45 /* Pods-RxStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStudy.release.xcconfig"; path = "Target Support Files/Pods-RxStudy/Pods-RxStudy.release.xcconfig"; sourceTree = "<group>"; };
 		B0ED95B813DDC8BE3F0A58E0 /* Pods_RxStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8C7C8615ECEC8D92F581E6 /* Pods-RxStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStudy.debug.xcconfig"; path = "Target Support Files/Pods-RxStudy/Pods-RxStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		E201F13623BE0E0F00965DF3 /* Parametable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parametable.swift; sourceTree = "<group>"; };
+		E20BF46523BB95B100326878 /* Respondable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respondable.swift; sourceTree = "<group>"; };
+		E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIModel.swift; sourceTree = "<group>"; };
+		E248C3AC23BCE7B100ECBB72 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E2A05F1F23BA285B002F6535 /* RxStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A05F2223BA285B002F6535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A05F2423BA285B002F6535 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,8 +52,9 @@
 		E2A05F2B23BA285C002F6535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2A05F2E23BA285C002F6535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2A05F3023BA285C002F6535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2A05F3823BA2C51002F6535 /* ScopeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeProtocol.swift; sourceTree = "<group>"; };
+		E2A05F3823BA2C51002F6535 /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
 		E2A05F5123BA3460002F6535 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		E2A05F5323BA44B7002F6535 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,23 @@
 				B0ED95B813DDC8BE3F0A58E0 /* Pods_RxStudy.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E248C3A823BCE6E600ECBB72 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E248C3A923BCE6F500ECBB72 /* APIModel */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E248C3A923BCE6F500ECBB72 /* APIModel */ = {
+			isa = PBXGroup;
+			children = (
+				E248C3AC23BCE7B100ECBB72 /* Common.swift */,
+				E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */,
+			);
+			path = APIModel;
 			sourceTree = "<group>";
 		};
 		E2A05F1623BA285B002F6535 = {
@@ -90,6 +117,7 @@
 			children = (
 				E2A05F3623BA2ACA002F6535 /* Core */,
 				E2A05F4F23BA3430002F6535 /* Features */,
+				E248C3A823BCE6E600ECBB72 /* Repository */,
 				E2A05F2223BA285B002F6535 /* AppDelegate.swift */,
 				E2A05F2423BA285B002F6535 /* SceneDelegate.swift */,
 				E2A05F2623BA285B002F6535 /* MainViewController.swift */,
@@ -113,7 +141,8 @@
 		E2A05F3723BA2ADB002F6535 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				E2A05F3823BA2C51002F6535 /* ScopeProtocol.swift */,
+				E2A05F3823BA2C51002F6535 /* Scope.swift */,
+				E201F13623BE0E0F00965DF3 /* Parametable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -121,6 +150,8 @@
 		E2A05F4E23BA31C3002F6535 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				E2A05F5323BA44B7002F6535 /* Router.swift */,
+				E20BF46523BB95B100326878 /* Respondable.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -267,9 +298,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A05F2723BA285B002F6535 /* MainViewController.swift in Sources */,
+				E20BF46623BB95B100326878 /* Respondable.swift in Sources */,
 				E2A05F2323BA285B002F6535 /* AppDelegate.swift in Sources */,
-				E2A05F3923BA2C51002F6535 /* ScopeProtocol.swift in Sources */,
+				E248C3AB23BCE71300ECBB72 /* KakaoAPIModel.swift in Sources */,
+				E201F13723BE0E0F00965DF3 /* Parametable.swift in Sources */,
+				E248C3AD23BCE7B100ECBB72 /* Common.swift in Sources */,
+				E2A05F3923BA2C51002F6535 /* Scope.swift in Sources */,
 				E2A05F2523BA285B002F6535 /* SceneDelegate.swift in Sources */,
+				E2A05F5423BA44B7002F6535 /* Router.swift in Sources */,
 				E2A05F5223BA3460002F6535 /* TopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
