@@ -8,29 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		4E8E1C17700B7DD7B4C2FEB6 /* Pods_RxStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED95B813DDC8BE3F0A58E0 /* Pods_RxStudy.framework */; };
-		CE6EEA7623BEE65B005EE654 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EEA7523BEE65B005EE654 /* ShopModel.swift */; };
-		CE6EEA7A23BF0C85005EE654 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EEA7923BF0C85005EE654 /* ShopTableViewCell.swift */; };
-		CEAE09D723BDAF7C0064EC03 /* Hot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE09D523BDAF7C0064EC03 /* Hot.storyboard */; };
-		CEAE09DA23BDAF8D0064EC03 /* Sale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE09D823BDAF8D0064EC03 /* Sale.storyboard */; };
-		CEAE09DE23BDAF930064EC03 /* Soho.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE09DC23BDAF930064EC03 /* Soho.storyboard */; };
-		CEAE09E423BDB00E0064EC03 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE09E123BDB00E0064EC03 /* Shop.storyboard */; };
-		CEAE09EA23BDB1EE0064EC03 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE09E923BDB1EE0064EC03 /* ShopViewController.swift */; };
-		CEAE09EC23BDB1F70064EC03 /* SohoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE09EB23BDB1F70064EC03 /* SohoViewController.swift */; };
-		CEAE09EE23BDB1FE0064EC03 /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE09ED23BDB1FE0064EC03 /* HotViewController.swift */; };
-		CEAE09F023BDB2050064EC03 /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE09EF23BDB2050064EC03 /* SaleViewController.swift */; };
-		CEAE09F523BDB2B10064EC03 /* ServerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE09F423BDB2B10064EC03 /* ServerUtil.swift */; };
-		CEAE09FA23BDB4020064EC03 /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE09F923BDB4020064EC03 /* RequestRouter.swift */; };
-		CEAE09FF23BDBF640064EC03 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE09FE23BDBF640064EC03 /* UIExtension.swift */; };
-		CEAE0A0223BDCA770064EC03 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE0A0123BDCA770064EC03 /* Constant.swift */; };
-		CEAE0A0423BDCC580064EC03 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE0A0323BDCC580064EC03 /* ShopViewModel.swift */; };
+		E201F13723BE0E0F00965DF3 /* Parametable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E201F13623BE0E0F00965DF3 /* Parametable.swift */; };
+		E20BF46623BB95B100326878 /* Respondable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20BF46523BB95B100326878 /* Respondable.swift */; };
+		E248C3AB23BCE71300ECBB72 /* KakaoAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */; };
+		E248C3AD23BCE7B100ECBB72 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C3AC23BCE7B100ECBB72 /* Common.swift */; };
 		E2A05F2323BA285B002F6535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F2223BA285B002F6535 /* AppDelegate.swift */; };
 		E2A05F2523BA285B002F6535 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F2423BA285B002F6535 /* SceneDelegate.swift */; };
 		E2A05F2723BA285B002F6535 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F2623BA285B002F6535 /* MainViewController.swift */; };
 		E2A05F2A23BA285B002F6535 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A05F2823BA285B002F6535 /* Main.storyboard */; };
 		E2A05F2C23BA285C002F6535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A05F2B23BA285C002F6535 /* Assets.xcassets */; };
 		E2A05F2F23BA285C002F6535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A05F2D23BA285C002F6535 /* LaunchScreen.storyboard */; };
-		E2A05F3923BA2C51002F6535 /* ScopeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F3823BA2C51002F6535 /* ScopeProtocol.swift */; };
+		E2A05F3923BA2C51002F6535 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F3823BA2C51002F6535 /* Scope.swift */; };
 		E2A05F5223BA3460002F6535 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F5123BA3460002F6535 /* TopViewController.swift */; };
+		E2A05F5423BA44B7002F6535 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F5323BA44B7002F6535 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,21 +40,10 @@
 		54C8D956EBA8EED16ADB8C45 /* Pods-RxStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStudy.release.xcconfig"; path = "Target Support Files/Pods-RxStudy/Pods-RxStudy.release.xcconfig"; sourceTree = "<group>"; };
 		B0ED95B813DDC8BE3F0A58E0 /* Pods_RxStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8C7C8615ECEC8D92F581E6 /* Pods-RxStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStudy.debug.xcconfig"; path = "Target Support Files/Pods-RxStudy/Pods-RxStudy.debug.xcconfig"; sourceTree = "<group>"; };
-		CE6EEA7523BEE65B005EE654 /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
-		CE6EEA7923BF0C85005EE654 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
-		CEAE09D523BDAF7C0064EC03 /* Hot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hot.storyboard; sourceTree = "<group>"; };
-		CEAE09D823BDAF8D0064EC03 /* Sale.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sale.storyboard; sourceTree = "<group>"; };
-		CEAE09DC23BDAF930064EC03 /* Soho.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Soho.storyboard; sourceTree = "<group>"; };
-		CEAE09E123BDB00E0064EC03 /* Shop.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
-		CEAE09E923BDB1EE0064EC03 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
-		CEAE09EB23BDB1F70064EC03 /* SohoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SohoViewController.swift; sourceTree = "<group>"; };
-		CEAE09ED23BDB1FE0064EC03 /* HotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
-		CEAE09EF23BDB2050064EC03 /* SaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
-		CEAE09F423BDB2B10064EC03 /* ServerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerUtil.swift; sourceTree = "<group>"; };
-		CEAE09F923BDB4020064EC03 /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
-		CEAE09FE23BDBF640064EC03 /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
-		CEAE0A0123BDCA770064EC03 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		CEAE0A0323BDCC580064EC03 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		E201F13623BE0E0F00965DF3 /* Parametable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parametable.swift; sourceTree = "<group>"; };
+		E20BF46523BB95B100326878 /* Respondable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respondable.swift; sourceTree = "<group>"; };
+		E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIModel.swift; sourceTree = "<group>"; };
+		E248C3AC23BCE7B100ECBB72 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E2A05F1F23BA285B002F6535 /* RxStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A05F2223BA285B002F6535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A05F2423BA285B002F6535 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,8 +52,9 @@
 		E2A05F2B23BA285C002F6535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2A05F2E23BA285C002F6535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2A05F3023BA285C002F6535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2A05F3823BA2C51002F6535 /* ScopeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeProtocol.swift; sourceTree = "<group>"; };
+		E2A05F3823BA2C51002F6535 /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
 		E2A05F5123BA3460002F6535 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		E2A05F5323BA44B7002F6535 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,96 +77,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CE6EEA7423BEE647005EE654 /* Model */ = {
+		E248C3A823BCE6E600ECBB72 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				CE6EEA7523BEE65B005EE654 /* ShopModel.swift */,
+				E248C3A923BCE6F500ECBB72 /* APIModel */,
 			);
-			path = Model;
+			path = Repository;
 			sourceTree = "<group>";
 		};
-		CEAE09C223BD98D20064EC03 /* Shop */ = {
+		E248C3A923BCE6F500ECBB72 /* APIModel */ = {
 			isa = PBXGroup;
 			children = (
-				CEAE09E123BDB00E0064EC03 /* Shop.storyboard */,
-				CEAE09E923BDB1EE0064EC03 /* ShopViewController.swift */,
-				CEAE0A0323BDCC580064EC03 /* ShopViewModel.swift */,
-				CE6EEA7923BF0C85005EE654 /* ShopTableViewCell.swift */,
+				E248C3AC23BCE7B100ECBB72 /* Common.swift */,
+				E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */,
 			);
-			path = Shop;
-			sourceTree = "<group>";
-		};
-		CEAE09C923BDAF3D0064EC03 /* Soho */ = {
-			isa = PBXGroup;
-			children = (
-				CEAE09DC23BDAF930064EC03 /* Soho.storyboard */,
-				CEAE09EB23BDB1F70064EC03 /* SohoViewController.swift */,
-			);
-			path = Soho;
-			sourceTree = "<group>";
-		};
-		CEAE09CE23BDAF650064EC03 /* Sale */ = {
-			isa = PBXGroup;
-			children = (
-				CEAE09D823BDAF8D0064EC03 /* Sale.storyboard */,
-				CEAE09EF23BDB2050064EC03 /* SaleViewController.swift */,
-			);
-			path = Sale;
-			sourceTree = "<group>";
-		};
-		CEAE09D323BDAF750064EC03 /* Hot */ = {
-			isa = PBXGroup;
-			children = (
-				CEAE09D523BDAF7C0064EC03 /* Hot.storyboard */,
-				CEAE09ED23BDB1FE0064EC03 /* HotViewController.swift */,
-			);
-			path = Hot;
-			sourceTree = "<group>";
-		};
-		CEAE09E623BDB1480064EC03 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		CEAE09F323BDB29F0064EC03 /* HTTP */ = {
-			isa = PBXGroup;
-			children = (
-				CEAE09F923BDB4020064EC03 /* RequestRouter.swift */,
-			);
-			path = HTTP;
-			sourceTree = "<group>";
-		};
-		CEAE09F623BDB2FC0064EC03 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				CEAE09F423BDB2B10064EC03 /* ServerUtil.swift */,
-				CEAE09FE23BDBF640064EC03 /* UIExtension.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		CEAE0A0023BDCA490064EC03 /* SupportFile */ = {
-			isa = PBXGroup;
-			children = (
-				E2A05F2223BA285B002F6535 /* AppDelegate.swift */,
-				E2A05F2423BA285B002F6535 /* SceneDelegate.swift */,
-				CEAE0A0123BDCA770064EC03 /* Constant.swift */,
-				E2A05F2B23BA285C002F6535 /* Assets.xcassets */,
-				E2A05F3023BA285C002F6535 /* Info.plist */,
-			);
-			path = SupportFile;
-			sourceTree = "<group>";
-		};
-		CEAE0A0523BDD2810064EC03 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				E2A05F2D23BA285C002F6535 /* LaunchScreen.storyboard */,
-				E2A05F2823BA285B002F6535 /* Main.storyboard */,
-				E2A05F2623BA285B002F6535 /* MainViewController.swift */,
-			);
-			path = Main;
+			path = APIModel;
 			sourceTree = "<group>";
 		};
 		E2A05F1623BA285B002F6535 = {
@@ -212,7 +117,14 @@
 			children = (
 				E2A05F3623BA2ACA002F6535 /* Core */,
 				E2A05F4F23BA3430002F6535 /* Features */,
-				CEAE0A0023BDCA490064EC03 /* SupportFile */,
+				E248C3A823BCE6E600ECBB72 /* Repository */,
+				E2A05F2223BA285B002F6535 /* AppDelegate.swift */,
+				E2A05F2423BA285B002F6535 /* SceneDelegate.swift */,
+				E2A05F2623BA285B002F6535 /* MainViewController.swift */,
+				E2A05F2823BA285B002F6535 /* Main.storyboard */,
+				E2A05F2B23BA285C002F6535 /* Assets.xcassets */,
+				E2A05F2D23BA285C002F6535 /* LaunchScreen.storyboard */,
+				E2A05F3023BA285C002F6535 /* Info.plist */,
 			);
 			path = RxStudy;
 			sourceTree = "<group>";
@@ -229,7 +141,8 @@
 		E2A05F3723BA2ADB002F6535 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				E2A05F3823BA2C51002F6535 /* ScopeProtocol.swift */,
+				E2A05F3823BA2C51002F6535 /* Scope.swift */,
+				E201F13623BE0E0F00965DF3 /* Parametable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -237,8 +150,8 @@
 		E2A05F4E23BA31C3002F6535 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
-				CEAE09F623BDB2FC0064EC03 /* Utils */,
-				CEAE09F323BDB29F0064EC03 /* HTTP */,
+				E2A05F5323BA44B7002F6535 /* Router.swift */,
+				E20BF46523BB95B100326878 /* Respondable.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -396,18 +309,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A05F2723BA285B002F6535 /* MainViewController.swift in Sources */,
-				CE6EEA7A23BF0C85005EE654 /* ShopTableViewCell.swift in Sources */,
+				E20BF46623BB95B100326878 /* Respondable.swift in Sources */,
 				E2A05F2323BA285B002F6535 /* AppDelegate.swift in Sources */,
-				CEAE0A0223BDCA770064EC03 /* Constant.swift in Sources */,
-				CEAE09F523BDB2B10064EC03 /* ServerUtil.swift in Sources */,
-				CEAE09F023BDB2050064EC03 /* SaleViewController.swift in Sources */,
-				CEAE0A0423BDCC580064EC03 /* ShopViewModel.swift in Sources */,
-				CEAE09EE23BDB1FE0064EC03 /* HotViewController.swift in Sources */,
-				CEAE09EC23BDB1F70064EC03 /* SohoViewController.swift in Sources */,
-				E2A05F3923BA2C51002F6535 /* ScopeProtocol.swift in Sources */,
-				CE6EEA7623BEE65B005EE654 /* ShopModel.swift in Sources */,
+				E248C3AB23BCE71300ECBB72 /* KakaoAPIModel.swift in Sources */,
+				E201F13723BE0E0F00965DF3 /* Parametable.swift in Sources */,
+				E248C3AD23BCE7B100ECBB72 /* Common.swift in Sources */,
+				E2A05F3923BA2C51002F6535 /* Scope.swift in Sources */,
 				E2A05F2523BA285B002F6535 /* SceneDelegate.swift in Sources */,
-				CEAE09EA23BDB1EE0064EC03 /* ShopViewController.swift in Sources */,
+				E2A05F5423BA44B7002F6535 /* Router.swift in Sources */,
 				E2A05F5223BA3460002F6535 /* TopViewController.swift in Sources */,
 				CEAE09FF23BDBF640064EC03 /* UIExtension.swift in Sources */,
 				CEAE09FA23BDB4020064EC03 /* RequestRouter.swift in Sources */,
