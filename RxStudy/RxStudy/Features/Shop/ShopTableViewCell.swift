@@ -10,7 +10,7 @@ import UIKit
 
 class ShopTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var productImageView: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,8 +22,11 @@ class ShopTableViewCell: UITableViewCell {
 
     }
     
-    func display(_ model: ShopModel) {
-        productImageView.image = model.productImage
+    func display(_ model: ShopPresentModel) {
+        textLabel?.text = model.name
+        detailTextLabel?.text = model.discription
+        
+
     }
     
 

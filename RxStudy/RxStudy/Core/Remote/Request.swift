@@ -137,8 +137,7 @@ extension Request {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-        
-        return request
+            return request
     }
     
     func asObservable() -> Observable<RequestResult<Response>> {
@@ -186,6 +185,7 @@ extension Request {
 // ===========================================================
 // ===================      Sample      ======================
 // ===========================================================
+/*
 struct TestData: Codable {
     let shopList: [Shop]
 }
@@ -197,6 +197,7 @@ struct Shop: Codable {
 struct RequestModel: Parametable {
     let size: Int
 }
+
 
 enum KakaoRouter {
     case shopRank(size: Int)
@@ -213,3 +214,4 @@ extension KakaoRouter: RouterProtocol {
         }
     }
 }
+*/

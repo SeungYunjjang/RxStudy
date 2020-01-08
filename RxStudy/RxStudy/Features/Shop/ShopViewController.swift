@@ -16,26 +16,62 @@ class ShopViewController: UIViewController {
     
     private let viewModel = ShopViewModel()
     private let disposeBag = DisposeBag()
+    private let shopTableViewCell = "ShopTableViewCell"
+    private let shopDetailPage = "shopDetailPage"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind()
-        viewModel.updatePageCount(0)
+        bindData()
+        bindAction()
     }
-
-    func bind() {
-        viewModel.items
-            .bind(to: tableView.rx.items(cellIdentifier: "ShopTableViewCell")) { (index: Int, model: ShopModel, cell: ShopTableViewCell) in
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+            
+        switch segue.identifier {
+        case shopDetailPage:
+            guard let shopDetailVC = segue.destination as? ShopDetailViewController,
+                let shopPresentModel = sender as? ShopPresentModel
+            else { return }
+            shopDetailVC.viewModel = ShopDetailViewModel.init(shopPresentModel)
+            
+        default:
+            break
+        }
+        
+    }
+    
+    func bindData() {
+        
+        viewModel.getPresentItems()
+            .bind(to: tableView.rx.items(cellIdentifier: shopTableViewCell)) { (index: Int, model: ShopPresentModel, cell: ShopTableViewCell) in
                 cell.display(model)
         }.disposed(by: disposeBag)
+        
     }
- 
+    
+    func bindAction() {
+        
+        tableView.rx.itemSelected
+            .compactMap { indexPath -> ShopPresentModel in
+                self.viewModel.getDetailPresentModel(indexPath.row)
+        }.subscribe { self.performSegue(withIdentifier: self.shopDetailPage, sender: $0.element) }
+        .disposed(by: disposeBag)
+        
+    }
+    
+    
 }
 
 extension ShopViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        //todo scroll item udpate event
+        viewModel.pageCountUpdate(indexPath.row)
+    }
+    
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        viewModel.scrollOnTop()
     }
     
 }
