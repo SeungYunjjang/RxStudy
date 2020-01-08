@@ -17,7 +17,4 @@ class ShopDetailViewModel {
         dto = _dto
     }
     
-    
-    
-    
 }

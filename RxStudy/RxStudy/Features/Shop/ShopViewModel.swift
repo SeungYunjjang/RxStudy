@@ -50,9 +50,15 @@ class ShopViewModel {
         
         setItems.compactMap { $0 }
             .map { $0.list }
-            .flatMap { return self.setPresentModel($0) }
-            .bind(to: presentItems)
-            .disposed(by: disposeBag)
+            .flatMap { models -> Observable<[ShopPresentModel]> in
+                for model in models {
+                    let shopModel: ShopPresentModel = ShopPresentModel.init(model)
+                    self.sendShopModel.append(shopModel)
+                }
+                return Observable.of(self.sendShopModel)
+        }
+        .bind(to: presentItems)
+        .disposed(by: disposeBag)
         
         
         fetch()
@@ -102,59 +108,6 @@ class ShopViewModel {
         return sendShopModel[row]
     }
     
-    
-    
-    
-    
-    
-    /*
-     
-     var items: PublishSubject<[ShopModel]> = PublishSubject()
-     private var pageCount: PublishSubject<Int?> = .init()
-     
-     private let disposeBag: DisposeBag = DisposeBag()
-     
-     init() {
-     pageCount.compactMap { $0 }
-     .flatMapLatest { pageCount -> Observable<[ShopModel]> in
-     
-     guard let url = URL(string: ApiUrls.shared.get(.shop)) else { return .empty()}
-     
-     let param: Dictionary<String, Any> = [ CONCEPTCATEGORYNOS : 0,
-     PAGE : pageCount,
-     SIZE : 10 ]
-     
-     let decoder: JSONDecoder = JSONDecoder()
-     
-     return RequestRouter.shared.request(url: url, param: param, method: .get)
-     .compactMap { try? JSONSerialization.data(withJSONObject: $0, options: .prettyPrinted) }
-     .compactMap { try? decoder.decode(ShopApiResponseModel.self, from: $0) }
-     .compactMap { $0.result?.list }
-     .flatMap { self.setPresentModel($0) }
-     
-     }
-     .bind(to: items)
-     .disposed(by: disposeBag)
-     }
-     
-     func updatePageCount(_ pageNum: Int) {
-     pageCount.onNext(pageNum)
-     }
-     
-     private func setPresentModel(_ shopApiModels: [ShopApiModel]) -> Observable<[ShopModel]>{
-     return Observable.create { observer  in
-     
-     var sendShopModel: [ShopModel] = []
-     for shopApiModel in shopApiModels {
-     let shopModel: ShopModel = ShopModel.init(shopApiModel)
-     sendShopModel.append(shopModel)
-     }
-     observer.onNext(sendShopModel)
-     
-     return Disposables.create()
-     }
-     }
-     */
 }
 
 
