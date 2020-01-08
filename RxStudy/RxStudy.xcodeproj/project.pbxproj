@@ -245,10 +245,10 @@
 		E2A05F4F23BA3430002F6535 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CE97DF3A23C4448900D8A559 /* Shop */,
 				CE97DF3D23C4449D00D8A559 /* Hot */,
 				CE97DF3C23C4449800D8A559 /* Sale */,
 				CE97DF3B23C4449400D8A559 /* Soho */,
-				CE97DF3A23C4448900D8A559 /* Shop */,
 				E2A05F5023BA3443002F6535 /* Top */,
 			);
 			path = Features;

@@ -11,7 +11,6 @@ import UIKit
 class ShopTableViewCell: UITableViewCell {
 
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,8 +24,6 @@ class ShopTableViewCell: UITableViewCell {
     func display(_ model: ShopPresentModel) {
         textLabel?.text = model.name
         detailTextLabel?.text = model.discription
-        
-
     }
     
 
