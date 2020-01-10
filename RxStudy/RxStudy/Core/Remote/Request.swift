@@ -132,22 +132,22 @@ extension Request {
         
         if urlComponent.queryItems == nil, let parameter = requirement.paramters {
             do {
-                 request.httpBody = try JSONSerialization.data(withJSONObject: parameter, options: .prettyPrinted)
+                request.httpBody = try JSONSerialization.data(withJSONObject: parameter, options: .prettyPrinted)
             } catch {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-            return request
+        return request
     }
     
     func asObservable() -> Observable<RequestResult<Response>> {
-         .create { observer -> Disposable in
+        .create { observer -> Disposable in
             let dispose = Disposables.create {
                 observer.onCompleted()
             }
             var request: URLRequestConvertible?
             do {
-                 request = try self.asRequest()
+                request = try self.asRequest()
             } catch let error {
                 observer.onNext(.failure(error))
             }
@@ -166,11 +166,11 @@ extension Request {
                     
                 case let .failure(error):
                     observer.onNext(.failure(error))
-
+                    
                 }
             }
             return dispose
-         }
+        }
     }
     
     // TODO: multipart request
@@ -186,32 +186,32 @@ extension Request {
 // ===================      Sample      ======================
 // ===========================================================
 /*
-struct TestData: Codable {
-    let shopList: [Shop]
-}
-
-struct Shop: Codable {
-    let name: String
-}
-
-struct RequestModel: Parametable {
-    let size: Int
-}
-
-
-enum KakaoRouter {
-    case shopRank(size: Int)
-    case shopRankModel(model: RequestModel)
-}
-
-extension KakaoRouter: RouterProtocol {
-    var requirement: (uri: String, paramters: Parameters?, method: HTTPMethod) {
-        switch self {
-        case let .shopRank(size):
-            return ("/shop/recommendShops/shopRank", ["size": size], .get)
-        case let .shopRankModel(model):
-            return ("/shop/recommendShops/shopRank", model.asParameter, .get)
-        }
-    }
-}
-*/
+ struct TestData: Codable {
+ let shopList: [Shop]
+ }
+ 
+ struct Shop: Codable {
+ let name: String
+ }
+ 
+ struct RequestModel: Parametable {
+ let size: Int
+ }
+ 
+ 
+ enum KakaoRouter {
+ case shopRank(size: Int)
+ case shopRankModel(model: RequestModel)
+ }
+ 
+ extension KakaoRouter: RouterProtocol {
+ var requirement: (uri: String, paramters: Parameters?, method: HTTPMethod) {
+ switch self {
+ case let .shopRank(size):
+ return ("/shop/recommendShops/shopRank", ["size": size], .get)
+ case let .shopRankModel(model):
+ return ("/shop/recommendShops/shopRank", model.asParameter, .get)
+ }
+ }
+ }
+ */

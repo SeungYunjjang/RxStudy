@@ -12,8 +12,10 @@ import Alamofire
 
 enum KakaoRouter {
     case shopRank(size: Int)
-//    case shopRankModel(model: )
+    //    case shopRankModel(model: )
     case shopList(model: ShopList.Request)
+    case shopDetail(registerNunber: Int)
+    case shopItems(registerNunber: Int)
 }
 
 extension KakaoRouter: RouterProtocol {
@@ -21,11 +23,16 @@ extension KakaoRouter: RouterProtocol {
         switch self {
         case let .shopRank(size):
             return ("/shop/recommendShops/shopRank", ["size": size], .get)
-//        case let .shopRankModel(model):
-//            return ("/shop/recommendShops/shopRank", model.asParameter, .get)
-//        }
         case let .shopList(model):
             return ("/tab/best/shops", model.asParameter, .get)
+        case let .shopDetail(registerNunber):
+            return ("/shop/\(registerNunber)/detail", nil, .get)
+        case let .shopItems(registerNunber):
+            return ("/shop/\(registerNunber)/items", nil, .get)
+            //        case let .shopRankModel(model):
+            //            return ("/shop/recommendShops/shopRank", model.asParameter, .get)
+        //        }
+        
         }
     }
 }

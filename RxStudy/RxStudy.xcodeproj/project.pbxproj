@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4E8E1C17700B7DD7B4C2FEB6 /* Pods_RxStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED95B813DDC8BE3F0A58E0 /* Pods_RxStudy.framework */; };
+		CE03E78923C5B57C009BEA64 /* ShopApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03E78823C5B57C009BEA64 /* ShopApiModel.swift */; };
+		CE03E78B23C5B596009BEA64 /* ShopDetailApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03E78A23C5B596009BEA64 /* ShopDetailApiModel.swift */; };
+		CE03E78D23C5B80A009BEA64 /* ShopDetailPresentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03E78C23C5B80A009BEA64 /* ShopDetailPresentModel.swift */; };
+		CE03E78F23C5BC94009BEA64 /* ShopItemsApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03E78E23C5BC94009BEA64 /* ShopItemsApiModel.swift */; };
 		CE2D49C223C571E4004830AE /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */; };
 		CE2D49C423C57224004830AE /* ShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */; };
 		CE97DF3123C443A000D8A559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE97DF2C23C443A000D8A559 /* Assets.xcassets */; };
@@ -54,6 +58,10 @@
 		54C8D956EBA8EED16ADB8C45 /* Pods-RxStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStudy.release.xcconfig"; path = "Target Support Files/Pods-RxStudy/Pods-RxStudy.release.xcconfig"; sourceTree = "<group>"; };
 		B0ED95B813DDC8BE3F0A58E0 /* Pods_RxStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8C7C8615ECEC8D92F581E6 /* Pods-RxStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStudy.debug.xcconfig"; path = "Target Support Files/Pods-RxStudy/Pods-RxStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		CE03E78823C5B57C009BEA64 /* ShopApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopApiModel.swift; sourceTree = "<group>"; };
+		CE03E78A23C5B596009BEA64 /* ShopDetailApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailApiModel.swift; sourceTree = "<group>"; };
+		CE03E78C23C5B80A009BEA64 /* ShopDetailPresentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailPresentModel.swift; sourceTree = "<group>"; };
+		CE03E78E23C5BC94009BEA64 /* ShopItemsApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemsApiModel.swift; sourceTree = "<group>"; };
 		CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewModel.swift; sourceTree = "<group>"; };
 		CE97DF2C23C443A000D8A559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +118,7 @@
 			children = (
 				CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */,
 				CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */,
+				CE03E78C23C5B80A009BEA64 /* ShopDetailPresentModel.swift */,
 			);
 			path = ShopDetail;
 			sourceTree = "<group>";
@@ -176,6 +185,9 @@
 			children = (
 				E248C3AC23BCE7B100ECBB72 /* Common.swift */,
 				E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */,
+				CE03E78823C5B57C009BEA64 /* ShopApiModel.swift */,
+				CE03E78A23C5B596009BEA64 /* ShopDetailApiModel.swift */,
+				CE03E78E23C5BC94009BEA64 /* ShopItemsApiModel.swift */,
 			);
 			path = APIModel;
 			sourceTree = "<group>";
@@ -392,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE97DF5623C445B000D8A559 /* KakaoRouter.swift in Sources */,
+				CE03E78F23C5BC94009BEA64 /* ShopItemsApiModel.swift in Sources */,
 				CE97DF4923C444AC00D8A559 /* HotViewController.swift in Sources */,
 				E20BF46623BB95B100326878 /* Respondable.swift in Sources */,
 				E2A05F2323BA285B002F6535 /* AppDelegate.swift in Sources */,
@@ -406,11 +419,14 @@
 				E2A05F3923BA2C51002F6535 /* Scope.swift in Sources */,
 				CE2D49C423C57224004830AE /* ShopDetailViewModel.swift in Sources */,
 				CE97DF5323C444CC00D8A559 /* ShopPresentModel.swift in Sources */,
+				CE03E78B23C5B596009BEA64 /* ShopDetailApiModel.swift in Sources */,
 				E2A05F2523BA285B002F6535 /* SceneDelegate.swift in Sources */,
 				CE97DF4223C444A500D8A559 /* ShopViewModel.swift in Sources */,
 				E2A05F5423BA44B7002F6535 /* Request.swift in Sources */,
 				E2A05F5223BA3460002F6535 /* TopViewController.swift in Sources */,
+				CE03E78923C5B57C009BEA64 /* ShopApiModel.swift in Sources */,
 				CE97DF4523C444A500D8A559 /* ShopViewController.swift in Sources */,
+				CE03E78D23C5B80A009BEA64 /* ShopDetailPresentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,12 +15,14 @@ class ShopViewModel {
     private let disposeBag = DisposeBag()
     private let parameterSubject: PublishSubject<ShopList.Request> = .init()
     private let presentItems: PublishSubject<[ShopPresentModel]> = PublishSubject()
-    private let setItems: ReplaySubject<ShopList.Response?> = ReplaySubject.create(bufferSize: 1)
+    private let setItems: PublishSubject<ShopList.Response?> = .init()
     
     private var pageCount: PublishSubject<Int> = .init()
     private var pageSize: PublishSubject<Int> = .init()
+    private var shopPresentModelArray: [ShopPresentModel] = []
     private var pageNum: Int = 0
-    private var sendShopModel: [ShopPresentModel] = []
+    
+    private var responseData: ShopList.Response? = nil
     
     //MARK: Init
     init() {
@@ -46,55 +48,70 @@ class ShopViewModel {
         }, onError: { error in
             print(error)
         })
-            .disposed(by: disposeBag)
-        
-        setItems.compactMap { $0 }
-            .map { $0.list }
-            .flatMap { models -> Observable<[ShopPresentModel]> in
-                for model in models {
-                    let shopModel: ShopPresentModel = ShopPresentModel.init(model)
-                    self.sendShopModel.append(shopModel)
-                }
-                return Observable.of(self.sendShopModel)
-        }
-        .bind(to: presentItems)
         .disposed(by: disposeBag)
         
+        setItems.compactMap { $0 }
+            .map { $0.list.map { ShopPresentModel.init($0) } }
+            .flatMap { Observable.of($0) }
+            .subscribe(onNext: { (shopPresentModelList) in
+                self.shopPresentModelArray = self.shopPresentModelArray + shopPresentModelList
+                self.presentItems.onNext(self.shopPresentModelArray)
+            })
+            .disposed(by: disposeBag)
+            
+            
+//        setItems.compactMap { $0 }
+//            .map { $0.list.map { ShopPresentModel.init($0) } }
+//            .flatMap { Observable.of($0) }
+//            .bind(to: presentItems)
+//            .disposed(by: disposeBag)
+        
+//        setItems.compactMap { $0 }
+//        .flatMap { rowData -> Observable<[Shop]> in
+//            Observable.from(rowData.list)
+//        }
+//        .map { model -> ShopPresentModel in
+//            let shop = ShopPresentModel.init(model)
+//            return shop
+//        }
+//        .subscribe(onNext: { shop in
+//            self.sendShopModel.append(shop)
+//        }, onCompleted : {
+//            self.presentItems.onNext(self.sendShopModel)
+//        })
+        
+        
+//        setItems.compactMap { $0 }
+//            .map { $0.list}
+//            .flatMap { models -> Observable<[ShopPresentModel]> in
+//                for model in models {
+//                    let shopModel: ShopPresentModel = ShopPresentModel.init(model)
+//                    self.sendShopModel
+//                }
+//                return Observable.of(self.sendShopModel)
+//        }
+//        .bind(to: presentItems)
+//        .disposed(by: disposeBag)
         
         fetch()
     }
     
     //MARK: Private
-    private func setPresentModel(_ shopApiModels: [Shop]) -> Observable<[ShopPresentModel]>{
-        return Observable.create { observer  in
-            
-            for shopApiModel in shopApiModels {
-                let shopModel: ShopPresentModel = ShopPresentModel.init(shopApiModel)
-                self.sendShopModel.append(shopModel)
-            }
-            observer.onNext(self.sendShopModel)
-            
-            return Disposables.create()
-        }
-    }
-    
     private func fetch() {
-        pageSize.onNext(20)
+        pageSize.onNext(10)
         pageCount.onNext(pageNum)
     }
     
     //MARK: Public
     func scrollOnTop() {
-        sendShopModel = []
+        shopPresentModelArray = []
         pageNum = 0
         pageCount.onNext(pageNum)
     }
     
-    
-    
     func pageCountUpdate(_ row: Int) {
         
-        if row >= (pageNum + 1) * 20 - 2 {
+        if row >= (pageNum + 1) * 10 - 2 {
             pageNum += 1
             pageCount.onNext(pageNum)
         }
@@ -105,7 +122,7 @@ class ShopViewModel {
     }
     
     func getDetailPresentModel(_ row: Int) -> ShopPresentModel {
-        return sendShopModel[row]
+        return shopPresentModelArray[row]
     }
     
 }

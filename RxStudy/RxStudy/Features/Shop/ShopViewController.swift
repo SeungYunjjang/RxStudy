@@ -19,7 +19,6 @@ class ShopViewController: UIViewController {
     private let shopTableViewCell = "ShopTableViewCell"
     private let shopDetailPage = "shopDetailPage"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindData()
@@ -34,7 +33,7 @@ class ShopViewController: UIViewController {
             guard let shopDetailVC = segue.destination as? ShopDetailViewController,
                 let shopPresentModel = sender as? ShopPresentModel
             else { return }
-            shopDetailVC.viewModel = ShopDetailViewModel.init(shopPresentModel)
+            shopDetailVC.viewModel = ShopDetailViewModel.init(shopPresentModel.no)
             
         default:
             break
