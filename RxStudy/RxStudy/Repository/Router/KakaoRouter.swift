@@ -14,8 +14,8 @@ enum KakaoRouter {
     case shopRank(size: Int)
     //    case shopRankModel(model: )
     case shopList(model: ShopList.Request)
-    case shopDetail(registerNunber: Int)
-    case shopItems(registerNunber: Int)
+    case shopDetail(registerNumber: Int)
+    case shopItems(registerNumber: Int)
 }
 
 extension KakaoRouter: RouterProtocol {
@@ -25,10 +25,10 @@ extension KakaoRouter: RouterProtocol {
             return ("/shop/recommendShops/shopRank", ["size": size], .get)
         case let .shopList(model):
             return ("/tab/best/shops", model.asParameter, .get)
-        case let .shopDetail(registerNunber):
-            return ("/shop/\(registerNunber)/detail", nil, .get)
-        case let .shopItems(registerNunber):
-            return ("/shop/\(registerNunber)/items", nil, .get)
+        case let .shopDetail(registerNumber):
+            return ("/shop/\(registerNumber)/detail", nil, .get)
+        case let .shopItems(registerNumber):
+            return ("/shop/\(registerNumber)/items", nil, .get)
             //        case let .shopRankModel(model):
             //            return ("/shop/recommendShops/shopRank", model.asParameter, .get)
         //        }

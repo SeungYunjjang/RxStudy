@@ -12,7 +12,6 @@ struct ShopPresentModel {
     
     private let dto: Shop
 
-//    let productImage: UIImage
     let no: Int
     let name: String
     let discription: String
@@ -25,41 +24,3 @@ struct ShopPresentModel {
         discription = dto.description
     }
 }
-/*
-struct ShopApiResponseModel : Codable {
-    let status: String
-    let code: Int
-    let result: ShopApiListModel?
-}
-
-struct ShopApiListModel : Codable {
-    let list: [ShopApiModel]
-}
-
-struct ShopApiModel : Codable {
-    let no: Int
-    let name: String
-    let url: String
-    let imageUrl: String
-    let bgImageUrl: String
-    let description: String
-    let subsCount: Int
-    let subscription: Bool
-    let talkStoreId: Int
-    let display: Bool
-    let imageRatio: Float
-    let type: ShopType
-    let orderOptions: [OrderOption]
-}
-
-struct OrderOption : Codable {
-    let value: String
-    let text: String
-    let `default`: Bool
-}
-
-enum ShopType : String, Codable {
-    case style
-    case talkstore
-}
-*/

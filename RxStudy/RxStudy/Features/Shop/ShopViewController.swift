@@ -21,8 +21,9 @@ class ShopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindData()
-        bindAction()
+//        bindData()
+//        bindAction()
+        mapTest()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,11 +34,69 @@ class ShopViewController: UIViewController {
             guard let shopDetailVC = segue.destination as? ShopDetailViewController,
                 let shopPresentModel = sender as? ShopPresentModel
             else { return }
-            shopDetailVC.viewModel = ShopDetailViewModel.init(shopPresentModel.no)
+            shopDetailVC.viewModel.setRegisterNum(shopPresentModel.no)
             
         default:
             break
         }
+        
+    }
+    
+    func mapTest() {
+        
+        //MARK: - map
+        Observable.of(1,2,3)
+            .map { $0 * 2 }
+            .subscribe(onNext: {
+                print($0)
+            }).disposed(by: disposeBag)
+        
+        
+        //MARK: - flatMap
+        struct Student {
+            var name: BehaviorSubject<String>
+            
+            init(_ _name: BehaviorSubject<String>) {
+                name = _name
+            }
+        }
+        
+        let flatMapStudent: PublishSubject<Student> = .init()
+        
+        flatMapStudent
+            .flatMap { student -> Observable<String> in
+                student.name
+        }.subscribe(onNext: { name in
+            print(name)
+            }).disposed(by: disposeBag)
+        
+        
+        let seungyun = Student(BehaviorSubject(value: "seungyun"))
+        flatMapStudent.onNext(seungyun)
+        
+        let andrew = Student(BehaviorSubject(value: "andrew"))
+        flatMapStudent.onNext(andrew)
+        
+        seungyun.name.onNext("KIM SEUNG YUN")
+        
+        //MARK: - flatMapLatest
+        
+        let flatMapLatestStudent: PublishSubject<Student> = .init()
+        flatMapLatestStudent
+            .flatMapLatest { student -> Observable<String> in
+                student.name
+        }.subscribe(onNext: { name in
+            print(name)
+            }).disposed(by: disposeBag)
+        
+        
+        let maria = Student(BehaviorSubject(value: "maria"))
+        flatMapLatestStudent.onNext(maria)
+        
+        let carmen = Student(BehaviorSubject(value: "carmen"))
+        flatMapLatestStudent.onNext(carmen)
+        
+        maria.name.onNext("IS NOT CALLING")
         
     }
     
@@ -57,7 +116,6 @@ class ShopViewController: UIViewController {
                 self.viewModel.getDetailPresentModel(indexPath.row)
         }.subscribe { self.performSegue(withIdentifier: self.shopDetailPage, sender: $0.element) }
         .disposed(by: disposeBag)
-        
     }
     
     

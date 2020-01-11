@@ -58,8 +58,16 @@ class ShopViewModel {
                 self.presentItems.onNext(self.shopPresentModelArray)
             })
             .disposed(by: disposeBag)
-            
-            
+                
+
+//        setItems.compactMap { $0 }
+//            .map { $0.list }
+//            .flatMap({ models -> Observable<[ShopPresentModel]> in
+//                return Observable.from(optional: models.map { ShopPresentModel.init($0)})
+//            })
+//            .bind(to: presentItems)
+//            .disposed(by: disposeBag)
+        
 //        setItems.compactMap { $0 }
 //            .map { $0.list.map { ShopPresentModel.init($0) } }
 //            .flatMap { Observable.of($0) }

@@ -11,7 +11,8 @@
 		CE03E78923C5B57C009BEA64 /* ShopApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03E78823C5B57C009BEA64 /* ShopApiModel.swift */; };
 		CE03E78B23C5B596009BEA64 /* ShopDetailApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03E78A23C5B596009BEA64 /* ShopDetailApiModel.swift */; };
 		CE03E78D23C5B80A009BEA64 /* ShopDetailPresentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03E78C23C5B80A009BEA64 /* ShopDetailPresentModel.swift */; };
-		CE03E78F23C5BC94009BEA64 /* ShopItemsApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03E78E23C5BC94009BEA64 /* ShopItemsApiModel.swift */; };
+		CE0F614923C84820009D5447 /* ShopDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F614823C84820009D5447 /* ShopDetailCell.swift */; };
+		CE0F614C23C84D1A009D5447 /* ShopDetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F614B23C84D1A009D5447 /* ShopDetailWebViewController.swift */; };
 		CE2D49C223C571E4004830AE /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */; };
 		CE2D49C423C57224004830AE /* ShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */; };
 		CE97DF3123C443A000D8A559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE97DF2C23C443A000D8A559 /* Assets.xcassets */; };
@@ -61,7 +62,8 @@
 		CE03E78823C5B57C009BEA64 /* ShopApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopApiModel.swift; sourceTree = "<group>"; };
 		CE03E78A23C5B596009BEA64 /* ShopDetailApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailApiModel.swift; sourceTree = "<group>"; };
 		CE03E78C23C5B80A009BEA64 /* ShopDetailPresentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailPresentModel.swift; sourceTree = "<group>"; };
-		CE03E78E23C5BC94009BEA64 /* ShopItemsApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemsApiModel.swift; sourceTree = "<group>"; };
+		CE0F614823C84820009D5447 /* ShopDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailCell.swift; sourceTree = "<group>"; };
+		CE0F614B23C84D1A009D5447 /* ShopDetailWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailWebViewController.swift; sourceTree = "<group>"; };
 		CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewModel.swift; sourceTree = "<group>"; };
 		CE97DF2C23C443A000D8A559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,12 +115,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE0F614A23C84CFE009D5447 /* ShopDetailWeb */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F614B23C84D1A009D5447 /* ShopDetailWebViewController.swift */,
+			);
+			path = ShopDetailWeb;
+			sourceTree = "<group>";
+		};
 		CE2D49BE23C571AF004830AE /* ShopDetail */ = {
 			isa = PBXGroup;
 			children = (
 				CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */,
 				CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */,
 				CE03E78C23C5B80A009BEA64 /* ShopDetailPresentModel.swift */,
+				CE0F614823C84820009D5447 /* ShopDetailCell.swift */,
 			);
 			path = ShopDetail;
 			sourceTree = "<group>";
@@ -132,6 +143,7 @@
 				CE97DF5223C444CC00D8A559 /* ShopPresentModel.swift */,
 				CE97DF4023C444A500D8A559 /* ShopTableViewCell.swift */,
 				CE2D49BE23C571AF004830AE /* ShopDetail */,
+				CE0F614A23C84CFE009D5447 /* ShopDetailWeb */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -187,7 +199,6 @@
 				E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */,
 				CE03E78823C5B57C009BEA64 /* ShopApiModel.swift */,
 				CE03E78A23C5B596009BEA64 /* ShopDetailApiModel.swift */,
-				CE03E78E23C5BC94009BEA64 /* ShopItemsApiModel.swift */,
 			);
 			path = APIModel;
 			sourceTree = "<group>";
@@ -404,10 +415,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE97DF5623C445B000D8A559 /* KakaoRouter.swift in Sources */,
-				CE03E78F23C5BC94009BEA64 /* ShopItemsApiModel.swift in Sources */,
 				CE97DF4923C444AC00D8A559 /* HotViewController.swift in Sources */,
+				CE0F614C23C84D1A009D5447 /* ShopDetailWebViewController.swift in Sources */,
 				E20BF46623BB95B100326878 /* Respondable.swift in Sources */,
 				E2A05F2323BA285B002F6535 /* AppDelegate.swift in Sources */,
+				CE0F614923C84820009D5447 /* ShopDetailCell.swift in Sources */,
 				CE97DF5023C444BB00D8A559 /* SohoViewController.swift in Sources */,
 				CE97DF4423C444A500D8A559 /* ShopTableViewCell.swift in Sources */,
 				CE97DF3923C4443000D8A559 /* MainViewController.swift in Sources */,
