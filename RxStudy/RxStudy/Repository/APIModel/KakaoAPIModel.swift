@@ -12,8 +12,10 @@ struct KaKaoStyle<Result: Codable>: Respondable {
     let status: String
     let code: Int
     let data: Result?
+    let extra: String?
     
-    enum CodingKeys: String, CodingKey {
-        case status, code, data = "result"
+    private enum CodingKeys: String, CodingKey {
+        case status, code, data = "result", extra
     }
 }
+
