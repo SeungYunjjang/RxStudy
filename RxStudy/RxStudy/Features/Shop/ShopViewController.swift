@@ -31,11 +31,7 @@ class ShopViewController: UIViewController {
             
         switch segue.identifier {
         case shopDetailPage:
-            guard let shopDetailVC = segue.destination as? ShopDetailViewController,
-                let shopPresentModel = sender as? ShopPresentModel
-            else { return }
-            shopDetailVC.viewModel.setRegisterNum(shopPresentModel.no)
-            
+            break
         default:
             break
         }
