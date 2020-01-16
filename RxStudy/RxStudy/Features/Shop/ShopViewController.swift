@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class ShopViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     private let viewModel = ShopViewModel()
@@ -21,17 +21,21 @@ class ShopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        bindData()
-//        bindAction()
-        mapTest()
+        bindData()
+        bindAction()
+//        mapTest()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-            
+        
         switch segue.identifier {
         case shopDetailPage:
-            break
+            guard let shopDetailVC = segue.destination as? ShopDetailViewController,
+                let shopPresentModel = sender as? ShopPresentModel
+                else { return }
+            shopDetailVC.viewModel.setRegisterNum(shopPresentModel.no)
+            
         default:
             break
         }
@@ -51,10 +55,6 @@ class ShopViewController: UIViewController {
         //MARK: - flatMap
         struct Student {
             var name: BehaviorSubject<String>
-            
-            init(_ _name: BehaviorSubject<String>) {
-                name = _name
-            }
         }
         
         let flatMapStudent: PublishSubject<Student> = .init()
@@ -64,13 +64,13 @@ class ShopViewController: UIViewController {
                 student.name
         }.subscribe(onNext: { name in
             print(name)
-            }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         
         
-        let seungyun = Student(BehaviorSubject(value: "seungyun"))
+        let seungyun = Student(name: BehaviorSubject(value: "seungyun"))
         flatMapStudent.onNext(seungyun)
         
-        let andrew = Student(BehaviorSubject(value: "andrew"))
+        let andrew = Student(name: BehaviorSubject(value: "andrew"))
         flatMapStudent.onNext(andrew)
         
         seungyun.name.onNext("KIM SEUNG YUN")
@@ -83,13 +83,13 @@ class ShopViewController: UIViewController {
                 student.name
         }.subscribe(onNext: { name in
             print(name)
-            }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         
         
-        let maria = Student(BehaviorSubject(value: "maria"))
+        let maria = Student(name: BehaviorSubject(value: "maria"))
         flatMapLatestStudent.onNext(maria)
         
-        let carmen = Student(BehaviorSubject(value: "carmen"))
+        let carmen = Student(name: BehaviorSubject(value: "carmen"))
         flatMapLatestStudent.onNext(carmen)
         
         maria.name.onNext("IS NOT CALLING")
@@ -111,7 +111,7 @@ class ShopViewController: UIViewController {
             .compactMap { indexPath -> ShopPresentModel in
                 self.viewModel.getDetailPresentModel(indexPath.row)
         }.subscribe { self.performSegue(withIdentifier: self.shopDetailPage, sender: $0.element) }
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
     
     

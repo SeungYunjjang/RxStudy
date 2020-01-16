@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -79,9 +79,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hgt-L9-7fK">
-                                <rect key="frame" x="0.0" y="-211" width="414" height="1263"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hgt-L9-7fK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="5" id="85R-wY-wev">
                                     <size key="itemSize" width="228" height="353"/>
@@ -131,10 +130,17 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uKx-6F-cqw" firstAttribute="top" secondItem="Hgt-L9-7fK" secondAttribute="top" id="PzE-3p-eW4"/>
+                            <constraint firstItem="uKx-6F-cqw" firstAttribute="trailing" secondItem="Hgt-L9-7fK" secondAttribute="trailing" id="UW4-vs-zMv"/>
+                            <constraint firstItem="Hgt-L9-7fK" firstAttribute="leading" secondItem="uKx-6F-cqw" secondAttribute="leading" id="YqA-hQ-WIh"/>
+                            <constraint firstItem="Hgt-L9-7fK" firstAttribute="bottom" secondItem="uKx-6F-cqw" secondAttribute="bottom" id="eW2-By-8lr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uKx-6F-cqw"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mbu-dl-SUG"/>
                     <connections>
+                        <outlet property="verticalCollectionView" destination="Hgt-L9-7fK" id="5Vy-Hp-YM3"/>
                         <segue destination="VIY-DJ-gzc" kind="show" identifier="shopDetailWebPage" id="iSs-8f-75Z"/>
                     </connections>
                 </viewController>

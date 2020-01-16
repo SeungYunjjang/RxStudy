@@ -51,56 +51,16 @@ class ShopViewModel {
         .disposed(by: disposeBag)
         
         setItems.compactMap { $0 }
-            .map { $0.list.map { ShopPresentModel.init($0) } }
-            .flatMap { Observable.of($0) }
-            .subscribe(onNext: { (shopPresentModelList) in
-                self.shopPresentModelArray = self.shopPresentModelArray + shopPresentModelList
+            .map { $0.list }
+            .flatMap { Observable.from($0) }
+            .map { ShopPresentModel.init($0) }
+            .subscribe(onNext: { shopPresentModel in
+                self.shopPresentModelArray.append(shopPresentModel)
                 self.presentItems.onNext(self.shopPresentModelArray)
             })
             .disposed(by: disposeBag)
-                
+        
 
-//        setItems.compactMap { $0 }
-//            .map { $0.list }
-//            .flatMap({ models -> Observable<[ShopPresentModel]> in
-//                return Observable.from(optional: models.map { ShopPresentModel.init($0)})
-//            })
-//            .bind(to: presentItems)
-//            .disposed(by: disposeBag)
-        
-//        setItems.compactMap { $0 }
-//            .map { $0.list.map { ShopPresentModel.init($0) } }
-//            .flatMap { Observable.of($0) }
-//            .bind(to: presentItems)
-//            .disposed(by: disposeBag)
-        
-//        setItems.compactMap { $0 }
-//        .flatMap { rowData -> Observable<[Shop]> in
-//            Observable.from(rowData.list)
-//        }
-//        .map { model -> ShopPresentModel in
-//            let shop = ShopPresentModel.init(model)
-//            return shop
-//        }
-//        .subscribe(onNext: { shop in
-//            self.sendShopModel.append(shop)
-//        }, onCompleted : {
-//            self.presentItems.onNext(self.sendShopModel)
-//        })
-        
-        
-//        setItems.compactMap { $0 }
-//            .map { $0.list}
-//            .flatMap { models -> Observable<[ShopPresentModel]> in
-//                for model in models {
-//                    let shopModel: ShopPresentModel = ShopPresentModel.init(model)
-//                    self.sendShopModel
-//                }
-//                return Observable.of(self.sendShopModel)
-//        }
-//        .bind(to: presentItems)
-//        .disposed(by: disposeBag)
-        
         fetch()
     }
     
