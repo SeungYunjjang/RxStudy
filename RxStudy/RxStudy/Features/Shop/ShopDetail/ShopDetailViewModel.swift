@@ -11,9 +11,9 @@ import Foundation
 
 class ShopDetailViewModel {
     
-    private let dto: ShopPresentModel
+    private let dto: ShopDetailViewModel
     
-    init(_ _dto: ShopPresentModel) {
+    init(_ _dto: ShopDetailViewModel) {
         dto = _dto
     }
     

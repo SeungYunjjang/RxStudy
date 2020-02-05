@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4E8E1C17700B7DD7B4C2FEB6 /* Pods_RxStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED95B813DDC8BE3F0A58E0 /* Pods_RxStudy.framework */; };
-		CE0F614923C84820009D5447 /* ShopDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F614823C84820009D5447 /* ShopDetailCell.swift */; };
+		C98B183C23EAE2140058D5B6 /* ShopDetailPresentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B183A23EAE2140058D5B6 /* ShopDetailPresentModel.swift */; };
+		C98B183D23EAE2140058D5B6 /* ShopDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B183B23EAE2140058D5B6 /* ShopDetailCell.swift */; };
+		C98B184223EAE2440058D5B6 /* ShopDetailApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B183E23EAE2440058D5B6 /* ShopDetailApiModel.swift */; };
+		C98B184323EAE2440058D5B6 /* ShopApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B183F23EAE2440058D5B6 /* ShopApiModel.swift */; };
+		C98B184423EAE2440058D5B6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B184023EAE2440058D5B6 /* Common.swift */; };
+		C98B184523EAE2440058D5B6 /* KakaoAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B184123EAE2440058D5B6 /* KakaoAPIModel.swift */; };
 		CE2D49C223C571E4004830AE /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */; };
 		CE2D49C423C57224004830AE /* ShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */; };
 		CE97DF3123C443A000D8A559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE97DF2C23C443A000D8A559 /* Assets.xcassets */; };
@@ -27,13 +32,8 @@
 		CE97DF5123C444BB00D8A559 /* Soho.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE97DF4F23C444BB00D8A559 /* Soho.storyboard */; };
 		CE97DF5323C444CC00D8A559 /* ShopPresentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97DF5223C444CC00D8A559 /* ShopPresentModel.swift */; };
 		CE97DF5623C445B000D8A559 /* KakaoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97DF5523C445B000D8A559 /* KakaoRouter.swift */; };
-		CEC1909F23CC38A100CFFC35 /* ShopDetailPresentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1909E23CC38A100CFFC35 /* ShopDetailPresentModel.swift */; };
-		CEC190A223CC38B100CFFC35 /* ShopDetailApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC190A023CC38B000CFFC35 /* ShopDetailApiModel.swift */; };
-		CEC190A323CC38B100CFFC35 /* ShopApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC190A123CC38B000CFFC35 /* ShopApiModel.swift */; };
 		E201F13723BE0E0F00965DF3 /* Parametable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E201F13623BE0E0F00965DF3 /* Parametable.swift */; };
 		E20BF46623BB95B100326878 /* Respondable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20BF46523BB95B100326878 /* Respondable.swift */; };
-		E248C3AB23BCE71300ECBB72 /* KakaoAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */; };
-		E248C3AD23BCE7B100ECBB72 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C3AC23BCE7B100ECBB72 /* Common.swift */; };
 		E2A05F2323BA285B002F6535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F2223BA285B002F6535 /* AppDelegate.swift */; };
 		E2A05F2523BA285B002F6535 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F2423BA285B002F6535 /* SceneDelegate.swift */; };
 		E2A05F3923BA2C51002F6535 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A05F3823BA2C51002F6535 /* Scope.swift */; };
@@ -58,7 +58,12 @@
 		54C8D956EBA8EED16ADB8C45 /* Pods-RxStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStudy.release.xcconfig"; path = "Target Support Files/Pods-RxStudy/Pods-RxStudy.release.xcconfig"; sourceTree = "<group>"; };
 		B0ED95B813DDC8BE3F0A58E0 /* Pods_RxStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8C7C8615ECEC8D92F581E6 /* Pods-RxStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStudy.debug.xcconfig"; path = "Target Support Files/Pods-RxStudy/Pods-RxStudy.debug.xcconfig"; sourceTree = "<group>"; };
-		CE0F614823C84820009D5447 /* ShopDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailCell.swift; sourceTree = "<group>"; };
+		C98B183A23EAE2140058D5B6 /* ShopDetailPresentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailPresentModel.swift; sourceTree = "<group>"; };
+		C98B183B23EAE2140058D5B6 /* ShopDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailCell.swift; sourceTree = "<group>"; };
+		C98B183E23EAE2440058D5B6 /* ShopDetailApiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailApiModel.swift; sourceTree = "<group>"; };
+		C98B183F23EAE2440058D5B6 /* ShopApiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopApiModel.swift; sourceTree = "<group>"; };
+		C98B184023EAE2440058D5B6 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		C98B184123EAE2440058D5B6 /* KakaoAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoAPIModel.swift; sourceTree = "<group>"; };
 		CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewModel.swift; sourceTree = "<group>"; };
 		CE97DF2C23C443A000D8A559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,13 +82,8 @@
 		CE97DF4F23C444BB00D8A559 /* Soho.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Soho.storyboard; sourceTree = "<group>"; };
 		CE97DF5223C444CC00D8A559 /* ShopPresentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopPresentModel.swift; sourceTree = "<group>"; };
 		CE97DF5523C445B000D8A559 /* KakaoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoRouter.swift; sourceTree = "<group>"; };
-		CEC1909E23CC38A100CFFC35 /* ShopDetailPresentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailPresentModel.swift; sourceTree = "<group>"; };
-		CEC190A023CC38B000CFFC35 /* ShopDetailApiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailApiModel.swift; sourceTree = "<group>"; };
-		CEC190A123CC38B000CFFC35 /* ShopApiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopApiModel.swift; sourceTree = "<group>"; };
 		E201F13623BE0E0F00965DF3 /* Parametable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parametable.swift; sourceTree = "<group>"; };
 		E20BF46523BB95B100326878 /* Respondable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respondable.swift; sourceTree = "<group>"; };
-		E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIModel.swift; sourceTree = "<group>"; };
-		E248C3AC23BCE7B100ECBB72 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E2A05F1F23BA285B002F6535 /* RxStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A05F2223BA285B002F6535 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A05F2423BA285B002F6535 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,10 +116,10 @@
 		CE2D49BE23C571AF004830AE /* ShopDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C98B183B23EAE2140058D5B6 /* ShopDetailCell.swift */,
+				C98B183A23EAE2140058D5B6 /* ShopDetailPresentModel.swift */,
 				CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */,
 				CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */,
-				CEC1909E23CC38A100CFFC35 /* ShopDetailPresentModel.swift */,
-				CE0F614823C84820009D5447 /* ShopDetailCell.swift */,
 			);
 			path = ShopDetail;
 			sourceTree = "<group>";
@@ -184,10 +184,10 @@
 		E248C3A923BCE6F500ECBB72 /* APIModel */ = {
 			isa = PBXGroup;
 			children = (
-				E248C3AC23BCE7B100ECBB72 /* Common.swift */,
-				E248C3AA23BCE71300ECBB72 /* KakaoAPIModel.swift */,
-				CEC190A123CC38B000CFFC35 /* ShopApiModel.swift */,
-				CEC190A023CC38B000CFFC35 /* ShopDetailApiModel.swift */,
+				C98B184023EAE2440058D5B6 /* Common.swift */,
+				C98B184123EAE2440058D5B6 /* KakaoAPIModel.swift */,
+				C98B183F23EAE2440058D5B6 /* ShopApiModel.swift */,
+				C98B183E23EAE2440058D5B6 /* ShopDetailApiModel.swift */,
 			);
 			path = APIModel;
 			sourceTree = "<group>";
@@ -407,26 +407,26 @@
 				CE97DF4923C444AC00D8A559 /* HotViewController.swift in Sources */,
 				E20BF46623BB95B100326878 /* Respondable.swift in Sources */,
 				E2A05F2323BA285B002F6535 /* AppDelegate.swift in Sources */,
-				CE0F614923C84820009D5447 /* ShopDetailCell.swift in Sources */,
+				C98B183D23EAE2140058D5B6 /* ShopDetailCell.swift in Sources */,
 				CE97DF5023C444BB00D8A559 /* SohoViewController.swift in Sources */,
 				CE97DF4423C444A500D8A559 /* ShopTableViewCell.swift in Sources */,
 				CE97DF3923C4443000D8A559 /* MainViewController.swift in Sources */,
-				CEC1909F23CC38A100CFFC35 /* ShopDetailPresentModel.swift in Sources */,
-				E248C3AB23BCE71300ECBB72 /* KakaoAPIModel.swift in Sources */,
-				CEC190A223CC38B100CFFC35 /* ShopDetailApiModel.swift in Sources */,
 				E201F13723BE0E0F00965DF3 /* Parametable.swift in Sources */,
-				CEC190A323CC38B100CFFC35 /* ShopApiModel.swift in Sources */,
 				CE97DF4C23C444B200D8A559 /* SaleViewController.swift in Sources */,
-				E248C3AD23BCE7B100ECBB72 /* Common.swift in Sources */,
 				CE2D49C223C571E4004830AE /* ShopDetailViewController.swift in Sources */,
 				E2A05F3923BA2C51002F6535 /* Scope.swift in Sources */,
 				CE2D49C423C57224004830AE /* ShopDetailViewModel.swift in Sources */,
 				CE97DF5323C444CC00D8A559 /* ShopPresentModel.swift in Sources */,
 				E2A05F2523BA285B002F6535 /* SceneDelegate.swift in Sources */,
 				CE97DF4223C444A500D8A559 /* ShopViewModel.swift in Sources */,
+				C98B184523EAE2440058D5B6 /* KakaoAPIModel.swift in Sources */,
+				C98B184423EAE2440058D5B6 /* Common.swift in Sources */,
 				E2A05F5423BA44B7002F6535 /* Request.swift in Sources */,
+				C98B184223EAE2440058D5B6 /* ShopDetailApiModel.swift in Sources */,
 				E2A05F5223BA3460002F6535 /* TopViewController.swift in Sources */,
 				CE97DF4523C444A500D8A559 /* ShopViewController.swift in Sources */,
+				C98B184323EAE2440058D5B6 /* ShopApiModel.swift in Sources */,
+				C98B183C23EAE2140058D5B6 /* ShopDetailPresentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

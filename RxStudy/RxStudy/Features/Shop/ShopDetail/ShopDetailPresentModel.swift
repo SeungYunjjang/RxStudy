@@ -2,7 +2,7 @@
 //  ShopDetailPresentModel.swift
 //  RxStudy
 //
-//  Created by andrew on 2020/01/08.
+//  Created by 승윤 on 2020/02/05.
 //  Copyright © 2020 Cha corp. All rights reserved.
 //
 
@@ -28,6 +28,5 @@ struct ShopDetailPresentModel {
         linkUrl = dto.linkUrl
         
     }
-    
-    
 }
+
