@@ -13,7 +13,6 @@ class ShopDetailCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
     
-    
     func display(_ model: ShopDetailPresentModel) {
         titleLabel.text = model.title
         likeBtn.setTitle("\(model.likeCount)", for: .normal)

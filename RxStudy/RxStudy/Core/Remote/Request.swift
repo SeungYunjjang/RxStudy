@@ -92,7 +92,6 @@ class Request<Response: Respondable> {
     }
 }
 
-
 // MARK: - Public Setter
 extension Request {
     // TODO

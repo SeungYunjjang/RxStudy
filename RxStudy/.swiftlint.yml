@@ -1,0 +1,13 @@
+
+disabled_rules:
+- identifier_name
+- line_length
+- large_tuple
+- private_over_fileprivate
+- redundant_optional_initialization
+- todo
+- trailing_whitespace
+
+included:
+excluded:
+- Pods

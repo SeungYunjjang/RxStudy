@@ -21,7 +21,7 @@ enum ShopList {
     
 }
 
-struct Shop : Codable {
+struct Shop: Codable {
     let no: Int
     let name: String
     let url: String
@@ -37,7 +37,7 @@ struct Shop : Codable {
     let orderOptions: [OrderOption]
 }
 
-struct OrderOption : Codable {
+struct OrderOption: Codable {
     let value: String
     let text: String
     let isDefaulted: Bool
@@ -47,7 +47,7 @@ struct OrderOption : Codable {
     }
 }
 
-enum ShopType : String, Codable {
+enum ShopType: String, Codable {
     case style
     case talkstore
 }

@@ -24,17 +24,17 @@ struct ShopModel {
     }
 }
 
-struct ShopApiResponseModel : Codable {
+struct ShopApiResponseModel: Codable {
     let status: String
     let code: Int
     let result: ShopApiListModel?
 }
 
-struct ShopApiListModel : Codable {
+struct ShopApiListModel: Codable {
     let list: [ShopApiModel]
 }
 
-struct ShopApiModel : Codable {
+struct ShopApiModel: Codable {
     let no: Int
     let name: String
     let url: String
@@ -50,16 +50,13 @@ struct ShopApiModel : Codable {
     let orderOptions: [OrderOption]
 }
 
-struct OrderOption : Codable {
+struct OrderOption: Codable {
     let value: String
     let text: String
     let `default`: Bool
 }
 
-enum ShopType : String, Codable {
+enum ShopType: String, Codable {
     case style
     case talkstore
 }
-
-
-

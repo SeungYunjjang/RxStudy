@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct ShopDetailPresentModel {
     
     private let dto: ShopItem
@@ -17,7 +16,6 @@ struct ShopDetailPresentModel {
     let title: String
     let likeCount: Int
     let linkUrl: String
-    
     
     init(_ _dto: ShopItem) {
         
@@ -29,4 +27,3 @@ struct ShopDetailPresentModel {
         
     }
 }
-
