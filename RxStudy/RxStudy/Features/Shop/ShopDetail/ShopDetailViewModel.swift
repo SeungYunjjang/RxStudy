@@ -17,9 +17,9 @@ class ShopDetailViewModel {
     private let disposeBag = DisposeBag()
     private let shopItemsResponse: PublishSubject<ShopDetail.ItemResponse> = .init()
     private let shopDetailResponse: PublishSubject<ShopDetail.DetailResponse> = .init()
-    private let shopItemsPresent: PublishSubject<[ShopDetailPresentModel]> = PublishSubject()
+    private let shopItemsPresent: PublishSubject<[ShopDetailPresentModel]> = .init()
     private let regNo: PublishSubject<Int> = .init()
-    private let model: PublishSubject<ShopList.Request> = .init()
+    private let shopListRequestModel: PublishSubject<ShopList.Request> = .init()
     
     private var pageNumber: Int = 0
     private var pageCount: PublishSubject<Int> = .init()
@@ -31,16 +31,17 @@ class ShopDetailViewModel {
         
         Observable.combineLatest(pageCount, pageSize)
             .subscribe(onNext: {
-                self.model.onNext(ShopList.Request(page: $0, size: $1, conceptCategoryNos: 0))
+                self.shopListRequestModel.onNext(ShopList.Request(page: $0, size: $1, conceptCategoryNos: 0))
             })
             .disposed(by: disposeBag)
         
-        Observable.combineLatest(regNo, model)
+        Observable.combineLatest(regNo, shopListRequestModel)
             .flatMapLatest {
                 Request<KaKaoStyle<ShopDetail.ItemResponse>>(KakaoRouter.shopItems(registerNumber: $0, model: $1))
                     .asObservable()
         }
-        .subscribe(onNext: { result in
+        .subscribe(onNext: { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .success(data):
                 self.shopItemsResponse.onNext(data)
@@ -53,11 +54,10 @@ class ShopDetailViewModel {
             .disposed(by: disposeBag)
         
         shopItemsResponse
-            .map { $0.list }
-            .flatMap { Observable.from($0) }
-            .map { ShopDetailPresentModel.init($0) }
-             .subscribe(onNext: { shopPresentModel in
-                self.shopDetailPresentModelArray.append(shopPresentModel)
+            .map { $0.list.map { ShopDetailPresentModel.init($0) } }
+             .subscribe(onNext: { [weak self] shopPresentModels in
+                guard let self = self else { return }
+                self.shopDetailPresentModelArray.append(contentsOf: shopPresentModels)
                 self.shopItemsPresent.onNext(self.shopDetailPresentModelArray)
             })
             .disposed(by: disposeBag)

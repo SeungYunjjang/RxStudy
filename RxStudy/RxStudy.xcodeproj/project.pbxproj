@@ -118,10 +118,10 @@
 		CE2D49BE23C571AF004830AE /* ShopDetail */ = {
 			isa = PBXGroup;
 			children = (
-				C98B183B23EAE2140058D5B6 /* ShopDetailCell.swift */,
-				C98B183A23EAE2140058D5B6 /* ShopDetailPresentModel.swift */,
 				CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */,
 				CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */,
+				C98B183A23EAE2140058D5B6 /* ShopDetailPresentModel.swift */,
+				C98B183B23EAE2140058D5B6 /* ShopDetailCell.swift */,
 			);
 			path = ShopDetail;
 			sourceTree = "<group>";

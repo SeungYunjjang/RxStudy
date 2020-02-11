@@ -20,7 +20,8 @@ class ShopDetailViewController: UIViewController {
     private let shopDetailCell = "ShopDetailCell"
     private let shopDetailWebPage = "shopDetailWebPage"
     
-    private let cellSize: CGSize = CGSize(width: UIScreen.main.bounds.width / 2 - 15, height: 90)
+    private var cellSize: CGSize = CGSize(width: UIScreen.main.bounds.width / 2 - 60, height: UIScreen.main.bounds.width / 2 * 1.2)
+    private var CELL_MINIMUN_INTER_SPACING: CGFloat = 1.25
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -19,6 +19,8 @@ class ShopViewController: UIViewController {
     private let shopTableViewCell = "ShopTableViewCell"
     private let shopDetailPage = "shopDetailPage"
     
+    private let cellHeight = UIScreen.main.bounds.height * 240 / 1920
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindData()
@@ -51,10 +53,12 @@ class ShopViewController: UIViewController {
     
     func bindAction() {
         tableView.rx.itemSelected
-            .compactMap { indexPath -> ShopPresentModel in
-                self.viewModel.getDetailPresentModel(indexPath.row)
-        }.subscribe { self.performSegue(withIdentifier: self.shopDetailPage, sender: $0.element) }
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+                self.performSegue(withIdentifier: self.shopDetailPage, sender: self.viewModel.getDetailPresentModel(indexPath.row))
+            })
             .disposed(by: disposeBag)
+        
     }
     
 }
@@ -67,6 +71,10 @@ extension ShopViewController: UITableViewDelegate {
     
     func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
         viewModel.scrollOnTop()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeight
     }
     
 }

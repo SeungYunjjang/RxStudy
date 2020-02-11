@@ -13,16 +13,13 @@ import RxCocoa
 class ShopViewModel {
     
     private let disposeBag = DisposeBag()
-    private let parameterSubject: PublishSubject<ShopList.Request> = .init()
-    private let presentItems: PublishSubject<[ShopPresentModel]> = PublishSubject()
-    private let shopItems: PublishSubject<ShopList.Response?> = .init()
+    private let presentItemsSubject: PublishSubject<[ShopPresentModel]> = .init()
+    private let shopItemsSubject: PublishSubject<ShopList.Response> = .init()
     
     private var pageCount: PublishSubject<Int> = .init()
     private var pageSize: PublishSubject<Int> = .init()
     private var shopPresentModelArray: [ShopPresentModel] = []
     private var pageNum: Int = 0
-    
-    private var responseData: ShopList.Response? = nil
 
     init() {
         
@@ -37,7 +34,7 @@ class ShopViewModel {
             guard let self = self else { return }
             switch result {
             case let .success(data):
-                self.shopItems.onNext(data)
+                self.shopItemsSubject.onNext(data)
             case let .failure(error):
                 print(error)
             }
@@ -46,12 +43,12 @@ class ShopViewModel {
         })
         .disposed(by: disposeBag)
         
-        shopItems.compactMap { $0 }
+        shopItemsSubject.compactMap { $0 }
             .map { $0.list.map { ShopPresentModel.init($0) } }
             .subscribe(onNext: { [weak self] shopPresentModelLists in
                 guard let self = self else { return }
                 self.shopPresentModelArray.append(contentsOf: shopPresentModelLists)
-                self.presentItems.onNext(self.shopPresentModelArray)
+                self.presentItemsSubject.onNext(self.shopPresentModelArray)
             })
             .disposed(by: disposeBag)
         
@@ -78,7 +75,7 @@ class ShopViewModel {
     }
     
     func getPresentItems() -> PublishSubject<[ShopPresentModel]> {
-        return presentItems
+        return presentItemsSubject
     }
     
     func getDetailPresentModel(_ row: Int) -> ShopPresentModel {
