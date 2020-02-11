@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct ShopDetailPresentModel {
     
     private let dto: ShopItem
@@ -16,8 +15,9 @@ struct ShopDetailPresentModel {
     let no: Int
     let title: String
     let likeCount: Int
-    let linkUrl: String
+    let productImageUrl: String
     
+    let linkUrl: String
     
     init(_ _dto: ShopItem) {
         
@@ -25,8 +25,9 @@ struct ShopDetailPresentModel {
         no = dto.no
         title = dto.title
         likeCount = dto.likeCount
+        productImageUrl = "https://img1.daumcdn.net/thumb/R300x0/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fkstyle\(dto.imageUrl)"
+        
         linkUrl = dto.linkUrl
         
     }
 }
-

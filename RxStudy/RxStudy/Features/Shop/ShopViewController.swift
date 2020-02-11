@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class ShopViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     private let viewModel = ShopViewModel()
@@ -19,101 +19,47 @@ class ShopViewController: UIViewController {
     private let shopTableViewCell = "ShopTableViewCell"
     private let shopDetailPage = "shopDetailPage"
     
+    private let cellHeight = UIScreen.main.bounds.height * 240 / 1920
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        bindData()
-//        bindAction()
-        mapTest()
+        bindData()
+        bindAction()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-            
+        
         switch segue.identifier {
         case shopDetailPage:
-            break
+            guard let shopDetailVC = segue.destination as? ShopDetailViewController,
+                let shopPresentModel = sender as? ShopPresentModel
+                else { return }
+            shopDetailVC.viewModel.setRegisterNum(shopPresentModel.no)
+            
         default:
             break
         }
         
     }
     
-    func mapTest() {
-        
-        //MARK: - map
-        Observable.of(1,2,3)
-            .map { $0 * 2 }
-            .subscribe(onNext: {
-                print($0)
-            }).disposed(by: disposeBag)
-        
-        
-        //MARK: - flatMap
-        struct Student {
-            var name: BehaviorSubject<String>
-            
-            init(_ _name: BehaviorSubject<String>) {
-                name = _name
-            }
-        }
-        
-        let flatMapStudent: PublishSubject<Student> = .init()
-        
-        flatMapStudent
-            .flatMap { student -> Observable<String> in
-                student.name
-        }.subscribe(onNext: { name in
-            print(name)
-            }).disposed(by: disposeBag)
-        
-        
-        let seungyun = Student(BehaviorSubject(value: "seungyun"))
-        flatMapStudent.onNext(seungyun)
-        
-        let andrew = Student(BehaviorSubject(value: "andrew"))
-        flatMapStudent.onNext(andrew)
-        
-        seungyun.name.onNext("KIM SEUNG YUN")
-        
-        //MARK: - flatMapLatest
-        
-        let flatMapLatestStudent: PublishSubject<Student> = .init()
-        flatMapLatestStudent
-            .flatMapLatest { student -> Observable<String> in
-                student.name
-        }.subscribe(onNext: { name in
-            print(name)
-            }).disposed(by: disposeBag)
-        
-        
-        let maria = Student(BehaviorSubject(value: "maria"))
-        flatMapLatestStudent.onNext(maria)
-        
-        let carmen = Student(BehaviorSubject(value: "carmen"))
-        flatMapLatestStudent.onNext(carmen)
-        
-        maria.name.onNext("IS NOT CALLING")
-        
-    }
-    
     func bindData() {
-        
         viewModel.getPresentItems()
-            .bind(to: tableView.rx.items(cellIdentifier: shopTableViewCell)) { (index: Int, model: ShopPresentModel, cell: ShopTableViewCell) in
+            .bind(to: tableView.rx.items(cellIdentifier: shopTableViewCell)) { (_, model: ShopPresentModel, cell: ShopTableViewCell) in
                 cell.display(model)
         }.disposed(by: disposeBag)
         
     }
     
     func bindAction() {
-        
         tableView.rx.itemSelected
-            .compactMap { indexPath -> ShopPresentModel in
-                self.viewModel.getDetailPresentModel(indexPath.row)
-        }.subscribe { self.performSegue(withIdentifier: self.shopDetailPage, sender: $0.element) }
-        .disposed(by: disposeBag)
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+                self.performSegue(withIdentifier: self.shopDetailPage, sender: self.viewModel.getDetailPresentModel(indexPath.row))
+            })
+            .disposed(by: disposeBag)
+        
     }
-    
     
 }
 
@@ -125,6 +71,10 @@ extension ShopViewController: UITableViewDelegate {
     
     func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
         viewModel.scrollOnTop()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeight
     }
     
 }

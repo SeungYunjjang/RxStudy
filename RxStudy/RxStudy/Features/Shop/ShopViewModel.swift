@@ -13,35 +13,28 @@ import RxCocoa
 class ShopViewModel {
     
     private let disposeBag = DisposeBag()
-    private let parameterSubject: PublishSubject<ShopList.Request> = .init()
-    private let presentItems: PublishSubject<[ShopPresentModel]> = PublishSubject()
-    private let setItems: PublishSubject<ShopList.Response?> = .init()
+    private let presentItemsSubject: PublishSubject<[ShopPresentModel]> = .init()
+    private let shopItemsSubject: PublishSubject<ShopList.Response> = .init()
     
     private var pageCount: PublishSubject<Int> = .init()
     private var pageSize: PublishSubject<Int> = .init()
     private var shopPresentModelArray: [ShopPresentModel] = []
     private var pageNum: Int = 0
-    
-    private var responseData: ShopList.Response? = nil
-    
-    //MARK: Init
+
     init() {
         
         Observable.combineLatest(pageCount, pageSize) { count, size in
             ShopList.Request.init(page: count, size: size, conceptCategoryNos: 0)
-        }.subscribe(onNext: { request in
-            self.parameterSubject.onNext(request)
-        }).disposed(by: disposeBag)
-        
-        parameterSubject
-            .flatMapLatest {
-                Request<KaKaoStyle<ShopList.Response>>(KakaoRouter.shopList(model: $0))
-                    .asObservable()
         }
-        .subscribe(onNext: { result in
+        .flatMapLatest {
+            Request<KaKaoStyle<ShopList.Response>>(KakaoRouter.shopList(model: $0))
+                .asObservable()
+        }
+        .subscribe(onNext: { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .success(data):
-                self.setItems.onNext(data)
+                self.shopItemsSubject.onNext(data)
             case let .failure(error):
                 print(error)
             }
@@ -50,67 +43,23 @@ class ShopViewModel {
         })
         .disposed(by: disposeBag)
         
-        setItems.compactMap { $0 }
+        shopItemsSubject.compactMap { $0 }
             .map { $0.list.map { ShopPresentModel.init($0) } }
-            .flatMap { Observable.of($0) }
-            .subscribe(onNext: { (shopPresentModelList) in
-                self.shopPresentModelArray = self.shopPresentModelArray + shopPresentModelList
-                self.presentItems.onNext(self.shopPresentModelArray)
+            .subscribe(onNext: { [weak self] shopPresentModelLists in
+                guard let self = self else { return }
+                self.shopPresentModelArray.append(contentsOf: shopPresentModelLists)
+                self.presentItemsSubject.onNext(self.shopPresentModelArray)
             })
             .disposed(by: disposeBag)
-                
-
-//        setItems.compactMap { $0 }
-//            .map { $0.list }
-//            .flatMap({ models -> Observable<[ShopPresentModel]> in
-//                return Observable.from(optional: models.map { ShopPresentModel.init($0)})
-//            })
-//            .bind(to: presentItems)
-//            .disposed(by: disposeBag)
-        
-//        setItems.compactMap { $0 }
-//            .map { $0.list.map { ShopPresentModel.init($0) } }
-//            .flatMap { Observable.of($0) }
-//            .bind(to: presentItems)
-//            .disposed(by: disposeBag)
-        
-//        setItems.compactMap { $0 }
-//        .flatMap { rowData -> Observable<[Shop]> in
-//            Observable.from(rowData.list)
-//        }
-//        .map { model -> ShopPresentModel in
-//            let shop = ShopPresentModel.init(model)
-//            return shop
-//        }
-//        .subscribe(onNext: { shop in
-//            self.sendShopModel.append(shop)
-//        }, onCompleted : {
-//            self.presentItems.onNext(self.sendShopModel)
-//        })
-        
-        
-//        setItems.compactMap { $0 }
-//            .map { $0.list}
-//            .flatMap { models -> Observable<[ShopPresentModel]> in
-//                for model in models {
-//                    let shopModel: ShopPresentModel = ShopPresentModel.init(model)
-//                    self.sendShopModel
-//                }
-//                return Observable.of(self.sendShopModel)
-//        }
-//        .bind(to: presentItems)
-//        .disposed(by: disposeBag)
         
         fetch()
     }
-    
-    //MARK: Private
+
     private func fetch() {
         pageSize.onNext(10)
         pageCount.onNext(pageNum)
     }
     
-    //MARK: Public
     func scrollOnTop() {
         shopPresentModelArray = []
         pageNum = 0
@@ -126,7 +75,7 @@ class ShopViewModel {
     }
     
     func getPresentItems() -> PublishSubject<[ShopPresentModel]> {
-        return presentItems
+        return presentItemsSubject
     }
     
     func getDetailPresentModel(_ row: Int) -> ShopPresentModel {
@@ -134,5 +83,3 @@ class ShopViewModel {
     }
     
 }
-
-

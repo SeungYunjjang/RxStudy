@@ -18,4 +18,3 @@ struct KaKaoStyle<Result: Codable>: Respondable {
         case status, code, data = "result", extra
     }
 }
-

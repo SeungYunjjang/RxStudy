@@ -9,5 +9,8 @@ target 'RxStudy' do
   pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SwiftLint'
+  pod 'Kingfisher'
+
 
 end

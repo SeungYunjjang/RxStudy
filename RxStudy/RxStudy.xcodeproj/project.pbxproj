@@ -16,6 +16,7 @@
 		C98B184523EAE2440058D5B6 /* KakaoAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B184123EAE2440058D5B6 /* KakaoAPIModel.swift */; };
 		CE2D49C223C571E4004830AE /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */; };
 		CE2D49C423C57224004830AE /* ShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */; };
+		CE796CBF23ED556100E1603E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CE796CBE23ED556100E1603E /* .swiftlint.yml */; };
 		CE97DF3123C443A000D8A559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE97DF2C23C443A000D8A559 /* Assets.xcassets */; };
 		CE97DF3723C4443000D8A559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE97DF3423C4443000D8A559 /* Main.storyboard */; };
 		CE97DF3823C4443000D8A559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE97DF3523C4443000D8A559 /* LaunchScreen.storyboard */; };
@@ -66,6 +67,7 @@
 		C98B184123EAE2440058D5B6 /* KakaoAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoAPIModel.swift; sourceTree = "<group>"; };
 		CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewModel.swift; sourceTree = "<group>"; };
+		CE796CBE23ED556100E1603E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CE97DF2C23C443A000D8A559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE97DF3423C4443000D8A559 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CE97DF3523C4443000D8A559 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,10 +118,10 @@
 		CE2D49BE23C571AF004830AE /* ShopDetail */ = {
 			isa = PBXGroup;
 			children = (
-				C98B183B23EAE2140058D5B6 /* ShopDetailCell.swift */,
-				C98B183A23EAE2140058D5B6 /* ShopDetailPresentModel.swift */,
 				CE2D49C123C571E4004830AE /* ShopDetailViewController.swift */,
 				CE2D49C323C57223004830AE /* ShopDetailViewModel.swift */,
+				C98B183A23EAE2140058D5B6 /* ShopDetailPresentModel.swift */,
+				C98B183B23EAE2140058D5B6 /* ShopDetailCell.swift */,
 			);
 			path = ShopDetail;
 			sourceTree = "<group>";
@@ -195,6 +197,7 @@
 		E2A05F1623BA285B002F6535 = {
 			isa = PBXGroup;
 			children = (
+				CE796CBE23ED556100E1603E /* .swiftlint.yml */,
 				E2A05F2123BA285B002F6535 /* RxStudy */,
 				E2A05F2023BA285B002F6535 /* Products */,
 				F4FBDE1FF27C7D3A864996D6 /* Pods */,
@@ -296,6 +299,7 @@
 				E2A05F1D23BA285B002F6535 /* Resources */,
 				D748D9DDB834BD1B936C56E3 /* [CP] Embed Pods Frameworks */,
 				E2A05F4D23BA2FA8002F6535 /* Embed Frameworks */,
+				CE796CBD23ED555300E1603E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -344,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE796CBF23ED556100E1603E /* .swiftlint.yml in Resources */,
 				CE97DF4323C444A500D8A559 /* Shop.storyboard in Resources */,
 				CE97DF3823C4443000D8A559 /* LaunchScreen.storyboard in Resources */,
 				CE97DF4823C444AC00D8A559 /* Hot.storyboard in Resources */,
@@ -357,6 +362,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CE796CBD23ED555300E1603E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 		CEFF761D332471FCBBD1C8F8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

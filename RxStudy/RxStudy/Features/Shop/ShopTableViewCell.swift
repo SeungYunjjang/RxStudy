@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ShopTableViewCell: UITableViewCell {
 
+    @IBOutlet var productImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subscriptLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,9 +26,15 @@ class ShopTableViewCell: UITableViewCell {
     }
     
     func display(_ model: ShopPresentModel) {
-        textLabel?.text = model.name
-        detailTextLabel?.text = model.discription
+        
+        if let url = URL(string: model.productImageUrl) {
+            productImageView.kf.setImage(with: url)
+        } else {
+            productImageView.isHidden = true
+        }
+        
+        titleLabel.text = model.name
+        subscriptLabel.text = model.discription
     }
-    
 
 }
